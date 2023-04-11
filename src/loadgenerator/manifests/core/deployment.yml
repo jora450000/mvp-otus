@@ -1,0 +1,34 @@
+#@ load("@ytt:data", "data")
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loadgenerator
+  namespace: #@ data.values.namespace
+  labels:
+    app: loadgenerator
+spec:
+  replicas: #@ data.values.loadgenerator.replicas
+  strategy: 
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: loadgenerator
+  template:
+    metadata:
+      labels:
+        app: loadgenerator
+    spec:
+      containers:
+      - name: loadgenerator
+        image: #@ data.values.loadgenerator.image.build.id
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: WATCHN_BASE_URL
+            value: #@ data.values.loadgenerator.baseUrl
+          - name: WATCHN_TARGET
+            value: #@ str(data.values.loadgenerator.target)
+          - name: WATCHN_REGION
+            value: #@ data.values.loadgenerator.region
+          - name: K6_OUT
+            value: #@ data.values.loadgenerator.k6.out

@@ -1,0 +1,10 @@
+extraArgs:
+  - --kubelet-preferred-address-types=InternalIP
+
+image:
+  registry: k8s.gcr.io
+  repository: metrics-server/metrics-server
+  tag: v0.4.2
+
+containerSecurityContext:
+  runAsNonRoot: false

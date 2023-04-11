@@ -1,0 +1,12 @@
+port: 8080
+
+redis:
+  url: ''
+  reader:
+    url: ''
+
+endpoints:
+  orders: ''
+
+# none/debug/info
+loglevel: info
