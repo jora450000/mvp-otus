@@ -61,7 +61,7 @@ parse_params() {
   builder='paketobuildpacks/builder:full'
   repository=$CI_REGISTRY_PROJECT
   #'watchn'
-  tag='latest'
+  #tag='latest'  -- in gitlab CI tag
   service='*'
 
   while :; do
