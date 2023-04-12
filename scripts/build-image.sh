@@ -59,7 +59,8 @@ parse_params() {
   arm=false
   quiet=false
   builder='paketobuildpacks/builder:full'
-  repository='watchn'
+  repository=$CI_REGISTRY_PROJECT
+  #'watchn'
   tag='latest'
   service='*'
 
