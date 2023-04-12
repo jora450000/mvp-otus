@@ -23,14 +23,14 @@ docker-build:
   script:
     - |
       if [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
-        export tag=""
-        echo "Running on default branch '$CI_DEFAULT_BRANCH': export tag = 'latest'"
+        tag=""
+        echo "Running on default branch '$CI_DEFAULT_BRANCH': tag = 'latest'"
       else
-        export tag=":$CI_COMMIT_REF_SLUG"
+        tag=":$CI_COMMIT_REF_SLUG"
         echo "Running on branch '$CI_COMMIT_BRANCH': tag = $tag"
       fi
       apk add --update wget bash && rm -rf /var/cache/apk/*
-      scripts/build-image.sh * -p "$CI_REGISTRY_PROJECT"
+      scripts/build-image.sh * -p "$CI_REGISTRY_PROJECT" -t $tag
     #- docker build --pull -t "$CI_REGISTRY_IMAGE${tag}" .
     #- docker push "$CI_REGISTRY_IMAGE${tag}"
   # Run this job in a branch where a Dockerfile exists
