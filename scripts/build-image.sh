@@ -53,7 +53,7 @@ die() {
 
 parse_params() {
   # default values of variables set from params
-  push=false
+  push=true
   all=false
   cnb=false
   arm=false
