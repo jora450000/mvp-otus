@@ -87,6 +87,7 @@ parse_params() {
       ;;
     -t | --tag)
       tag="${2-}"
+      echo "$tag"
       shift
       ;;
     -?*) die "Unknown option: $1" ;;

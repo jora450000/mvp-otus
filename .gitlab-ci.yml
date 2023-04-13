@@ -26,7 +26,8 @@ docker-build:
         tag=""
         echo "Running on default branch '$CI_DEFAULT_BRANCH': tag = 'latest'"
       else
-        tag=":$CI_COMMIT_REF_SLUG"
+        #tag=":$CI_COMMIT_REF_SLUG"
+        tag="$CI_COMMIT_BRANCH"
         echo "Running on branch '$CI_COMMIT_BRANCH': tag = $tag"
       fi
       apk add --update wget bash && rm -rf /var/cache/apk/*
