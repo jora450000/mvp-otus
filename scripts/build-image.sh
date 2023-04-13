@@ -1,4 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash 
+
+
+####export
 
 set -Eeuo pipefail
 trap cleanup SIGINT SIGTERM ERR EXIT
