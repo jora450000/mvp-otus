@@ -1,5 +1,4 @@
-
-This project build images and publish to docker registry for project https://github.com/niallthomson/microservices-demo.git
+This project has cloned from https://github.com/niallthomson/microservices-demo.git and added here  Gitlab-CI script for build images and publish to docker registry microservices.
 
 gitlab runner is docker:dind. 
 
