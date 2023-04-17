@@ -1,3 +1,13 @@
+
+This project build images and publish to docker registry for project https://github.com/niallthomson/microservices-demo.git
+
+gitlab runner is docker:dind. 
+tag latest must used for branch main.
+other tag become from the name of the branch.
+
+
+
+
 # Watchn - Microservices Demo
 
 Watchn is a project that provides a demo for illustrating various concepts related to the development and deployment of applications that are made up of distributed, decoupled components. Like projects that inspired is such as Hipster Shop and Sock Shop it is deliberately over-architected to provide a foundation for truely exploring more complex techniques and technologies.
