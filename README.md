@@ -2,8 +2,10 @@
 This project build images and publish to docker registry for project https://github.com/niallthomson/microservices-demo.git
 
 gitlab runner is docker:dind. 
-tag latest must used for branch main.
-other tag become from the name of the branch.
+
+Tag latest must used for branch main.
+
+Other tag become from the name of the branch.
 
 
 
