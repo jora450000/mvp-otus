@@ -5,9 +5,9 @@
 replicaCount: 1
 
 image:
-  repository: watchn/watchn-checkout
+  repository: docker.io/jora450000/watchn-checkout
   pullPolicy: IfNotPresent
-  tag: "build.1661651841"
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
