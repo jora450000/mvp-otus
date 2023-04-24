@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: docker.io/jora450000/watchn-assets
+  repository: docker.io/jora450000/watchn-assets:latest
   pullPolicy: IfNotPresent
   tag: "build.1661651841"
 
