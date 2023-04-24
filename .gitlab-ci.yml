@@ -21,6 +21,12 @@ docker-build:
         echo "Running on branch '$CI_COMMIT_BRANCH': tag = $tag"
       fi
       apk add --update wget bash && rm -rf /var/cache/apk/*
+      apk add --no-cache bash git openssh make musl-dev go
+
+      # Configure Go
+      export GOROOT /usr/lib/go
+      export GOPATH /go
+      export PATH /go/bin:$PATH
       scripts/build-image.sh   -t $tag -p "$CI_REGISTRY_PROJECT" 
     
  
