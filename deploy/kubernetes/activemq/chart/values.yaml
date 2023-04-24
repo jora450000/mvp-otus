@@ -5,9 +5,9 @@
 replicaCount: 1
 
 image:
-  repository: watchn/activemq
+  repository: docker.io/jora450000/k8s-demo-activemq
   pullPolicy: IfNotPresent
-  tag: "0.0.2"
+  tag: "0.1"
 
 imagePullSecrets: []
 nameOverride: ""
