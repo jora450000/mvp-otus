@@ -4,9 +4,9 @@
 
 replicaCount: 1
 image:
-  repository: watchn/watchn-payments
+  repository: jora450000/watchn-payments
   pullPolicy: IfNotPresent
-  tag: "build.1661651841"
+  tag: "latest"
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""

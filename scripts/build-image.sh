@@ -182,6 +182,7 @@ if [[ "$service" = '*' ]]; then
   build 'orders'
   build 'checkout'
   build 'assets'
+  build 'payments'
 else
   build "$service"
 fi
