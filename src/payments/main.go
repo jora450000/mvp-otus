@@ -9,9 +9,9 @@ import (
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/niallthomson/microservices-demo/payments/config"
-	"github.com/niallthomson/microservices-demo/payments/controller"
+//	"github.com/niallthomson/microservices-demo/payments/controller"
 	_ "github.com/niallthomson/microservices-demo/payments/docs"
-//	"github.com/niallthomson/microservices-demo/payments/repository"
+	"github.com/niallthomson/microservices-demo/payments/repository"
 	"github.com/sethvargo/go-envconfig/pkg/envconfig"
 	ginprometheus "github.com/zsais/go-gin-prometheus"
 
