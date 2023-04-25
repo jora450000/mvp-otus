@@ -11,7 +11,7 @@ import (
 	"github.com/niallthomson/microservices-demo/payments/config"
 	"github.com/niallthomson/microservices-demo/payments/controller"
 	_ "github.com/niallthomson/microservices-demo/payments/docs"
-	"github.com/niallthomson/microservices-demo/payments/repository"
+//	"github.com/niallthomson/microservices-demo/payments/repository"
 	"github.com/sethvargo/go-envconfig/pkg/envconfig"
 	ginprometheus "github.com/zsais/go-gin-prometheus"
 
@@ -43,19 +43,19 @@ func main() {
 
 	r := gin.Default()
 
-	c, err := controller.NewController(config)
-	if err != nil {
-		log.Fatalln("Error creating controller", err)
-	}
+//	c, err := controller.NewController(config)
+//	if err != nil {
+//		log.Fatalln("Error creating controller", err)
+//	}
 
-	payments := r.Group("/paymentsue")
-	{
-		payments.GET("", c.GetProducts)
+//	payments := r.Group("/paymentsue")
+//	{
+//		payments.GET("", c.GetProducts)
 
-		payments.GET("/size", c.PaymentsSize)
-		payments.GET("/tags", c.ListTags)
-		payments.GET("/product/:id", c.GetProduct)
-	}
+//		payments.GET("/size", c.PaymentsSize)
+//		payments.GET("/tags", c.ListTags)
+//		payments.GET("/product/:id", c.GetProduct)
+//	}
 
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	r.GET("/health", func(c *gin.Context) {

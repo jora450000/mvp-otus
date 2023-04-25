@@ -176,7 +176,7 @@ function build()
 }
 
 if [[ "$service" = '*' ]]; then
-#  build 'payments'
+  build 'payments'
   build 'ui'
   build 'catalog'
   build 'cart'

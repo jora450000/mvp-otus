@@ -21,7 +21,7 @@ docker-build:
         echo "Running on branch '$CI_COMMIT_BRANCH': tag = $tag"
       fi
       apk add --update wget bash && rm -rf /var/cache/apk/*
-      # apk add --no-cache bash git openssh make musl-dev go
+      apk add --no-cache bash git openssh make musl-dev go
 
       # Configure Go
       
