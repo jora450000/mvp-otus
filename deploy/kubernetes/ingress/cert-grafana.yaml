@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: grafana-cert
+  namespace: monitoring
+spec:
+  secretName: grafana-tls
+  issuerRef:
+    name: nip-issuer
+    kind: ClusterIssuer
+  commonName: grafana.91.185.86.78.sslip.io
+  dnsNames:
+  - grafana.91.185.86.78.sslip.io
