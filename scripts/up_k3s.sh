@@ -76,5 +76,9 @@ rm -f LICENSE READM* kubectl
 #deploy watchn
 export KUBECTL=/etc/rancher/k3s/k3s.yaml
 
+cd ../deploy/kubernetes
+NODE_PORT=1 helmfile apply
+
+
 
 
