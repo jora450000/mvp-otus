@@ -80,5 +80,19 @@ cd ../deploy/kubernetes
 NODE_PORT=1 helmfile apply
 
 
+#deploy certmanager
+helm repo add jetstack https://charts.jetstack.io
+helm repo update
+helm install \
+  cert-manager jetstack/cert-manager \
+  --namespace cert-manager \
+  --create-namespace \
+  --version v1.11.1 \
+
+
+#deploy ingress web
+
+cd ingress
+source ./make_ingress_web.sh
 
 

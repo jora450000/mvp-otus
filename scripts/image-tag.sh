@@ -1,1 +1,1 @@
-IMAGE_TAG='build.1661651841'
+IMAGE_TAG='latest'
