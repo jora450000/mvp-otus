@@ -24,7 +24,7 @@ Helm-чарты перенастроены на собранные сборко�
 
 ![Screenshot](/docs/images/screenshot6.png)
 
-![Screenshot](/docs/images/screenshot6.1/png)
+![Screenshot](/docs/images/screenshot6.1.png)
 
 7. На демо-стенде развернут ArgoCD. К ArgoCD подключены helm-чарты приложения watchn , соединенные с репозитарием https://gitlab.com/jora450000/demo-watchn.git
 
