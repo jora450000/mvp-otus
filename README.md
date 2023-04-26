@@ -35,7 +35,7 @@
 
 =======================================================================================================================================================================
 
-This project has cloned from https://github.com/niallthomson/microservices-demo.git and added here  Gitlab-CI script for build images and publish to docker registry microservices and k3s-uo.sh for create new test k3s-based application watchn.
+This project has cloned from https://github.com/niallthomson/microservices-demo.git and added here  Gitlab-CI script for build images and publish to docker registry microservices and /deploy/kubernetes/k3s-up.sh for create new test k3s-based application watchn, /deploy/kubernetes/ingress/* for make ingress with certmanager certs.
 
 gitlab runner is docker:dind. 
 
