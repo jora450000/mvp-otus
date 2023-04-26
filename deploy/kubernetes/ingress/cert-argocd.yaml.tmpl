@@ -1,13 +1,13 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: watchn-cert
-  namespace: watchn
+  name: argocd-cert
+  namespace: argocd
 spec:
-  secretName: watchn-tls
+  secretName: argocd-tls
   issuerRef:
     name: nip-issuer
     kind: ClusterIssuer
-  commonName: www.91.185.86.78.sslip.io
+  commonName: argocd.${MYIP}.sslip.io
   dnsNames:
-  - www.91.185.86.78.sslip.io
+  - argocd.${MYIP}.sslip.io

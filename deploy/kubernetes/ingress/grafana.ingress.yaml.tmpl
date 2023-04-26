@@ -11,10 +11,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - grafana.91.185.86.78.sslip.io
+    - grafana.${MYIP}.sslip.io
     secretName: grafana-tls
   rules:
-   - host: grafana.91.185.86.78.sslip.io
+   - host: grafana.${MYIP}.sslip.io
      http:
       paths:
       - path: /

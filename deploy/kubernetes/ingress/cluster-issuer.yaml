@@ -5,7 +5,7 @@ metadata:
   namespace: certmanager
 spec:
   acme:
-    email: jora450000@yandex.ru
+    email: jora450000@ya.ru
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: nip-issuer
@@ -21,7 +21,7 @@ metadata:
  namespace: certmanager
 spec:
  acme:
-   email: jora450000@yandex.ru
+   email: jora450000@ya.ru
    # We use the staging server here for testing to avoid hitting
    server: https://acme-staging-v02.api.letsencrypt.org/directory
    privateKeySecretRef:

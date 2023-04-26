@@ -40,7 +40,7 @@ sudo bash -c "curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=latest sh -"
 fgrep   "flannel-backend=host-gw" /etc/systemd/system/k3s.service
 
 if [ $? != 0 ] ; then
-	sed -i '$d'  /etc/systemd/system/k3s.service
+	sed -i '$ d'  /etc/systemd/system/k3s.service
 	echo -n "--flannel-backend=host-gw" >> /etc/systemd/system/k3s.service 
 	cat  /etc/systemd/system/k3s.service
 	systemctl daemon-reload

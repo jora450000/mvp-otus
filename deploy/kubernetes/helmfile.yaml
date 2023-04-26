@@ -54,4 +54,4 @@ releases:
   timeout: 600
   values:
     - components.yaml.gotmpl
-    - ingress.yaml.gotmpl
+#    - ingress.yaml.gotmpl

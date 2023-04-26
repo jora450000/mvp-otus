@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: watchn-cert
+  namespace: watchn
+spec:
+  secretName: watchn-tls
+  issuerRef:
+    name: nip-issuer
+    kind: ClusterIssuer
+  commonName: www.$(MYIP}.sslip.io
+  dnsNames:
+  - www.${MYIP}.sslip.io

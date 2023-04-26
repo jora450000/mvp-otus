@@ -11,10 +11,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - www.91.185.86.78.sslip.io
+    - www.$(MYIP}.sslip.io
     secretName: watchn-tls
   rules:
-   - host: www.91.185.86.78.sslip.io
+   - host: www.${MYIP}.sslip.io
      http:
       paths:
       - path: /
