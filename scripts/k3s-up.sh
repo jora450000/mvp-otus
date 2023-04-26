@@ -54,12 +54,13 @@ fi
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
 install -o root -g root -m 0755 kubectl /bin/kubectl
-ln -s  /bin/k /bin/kubectl
+ln -s  /bin/kubectl /bin/k
 
 
 
 #install helm and plugin
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+ln -s /usr/local/bin/helm  /bin/helm
 helm plugin install https://github.com/databus23/helm-diff
 
 
@@ -74,24 +75,24 @@ rm -f LICENSE READM* kubectl
 
 
 #deploy watchn
-export KUBECTL=/etc/rancher/k3s/k3s.yaml
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 
+kubectl create ns watchn
 cd ../deploy/kubernetes
-NODE_PORT=1 helmfile apply
+NODE_PORT=1 helmfile -n watchn  apply
 
 
 #deploy certmanager
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.8.2/cert-manager.crds.yaml
 helm repo add jetstack https://charts.jetstack.io
 helm repo update
 helm install \
   cert-manager jetstack/cert-manager \
   --namespace cert-manager \
   --create-namespace \
-  --version v1.11.1 \
-
+  --version v1.11.1 
 
 #deploy ingress web
-
 cd ingress
 source ./make_ingress_web.sh
 
