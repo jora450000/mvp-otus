@@ -4,7 +4,7 @@
 
 ![Screenshot](/docs/images/screenshot1.png)
 
-2. Для микросервисного приложения написана сборка CI для GitLab в склонированном с https://github.com/niallthomson/microservices-demo репозитарии в https://gitlab.com/jora450000/demo-watchn.git . В результате исполнения образы микросервисов пушатся в проект docker hub https://hub.docker.com/search?q=jora450000%2Fwatchn (настраивается переменными CI/CD в gitlab). Тег образов latest для ветки main и имя_ветки для любой другой.
+2. Для микросервисного приложения написана сборка CI для GitLab в склонированном с https://github.com/niallthomson/microservices-demo репозитарии в https://gitlab.com/jora450000/demo-watchn.git . В результате исполнения образы микросервисов пушатся в проект docker hub https://hub.docker.com/search?q=jora450000%2Fwatchn (настраивается переменными CI/CD в gitlab). Тег образов latest для ветки main и имя_ветки для любой другой. Helm-часты перенастроены на образы, спушенные в docker.hub сборкой.
 
 ![Screenshot](/docs/images/screenshot2.png)
 
