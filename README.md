@@ -1,3 +1,35 @@
+Отчет по MVP «Микросервисное приложение в Kubernetes»
+
+1. Выбрано и развернуто микросервисное демо-приложение https://github.com/niallthomson/microservices-demo
+
+![Screenshot](/docs/images/screenshot1.png)
+
+2. Для микросервисного приложения написана сборка CI для GitLab в склонированном с https://github.com/niallthomson/microservices-demo репозитарии в https://gitlab.com/jora450000/demo-watchn.git . В результате исполнения образы микросервисов пушатся в проект docker hub https://hub.docker.com/search?q=jora450000%2Fwatchn (настраивается переменными CI/CD в gitlab). Тег образов latest для ветки main и имя_ветки для любой другой.
+
+![Screenshot](/docs/images/screenshot2.png)
+
+3. Написан bash-скрипт для разворота приложения в кластере k8s и окружения (k3s, kubectl, helm. Helm-diff, helmfile, certmanager) scripts/k3s-up.sh.   Для опубликованных сервисов настроена выдача и использование сертификатов Let“s Encrypt через certmanager. Ingress настроен через реверс-прокси  traefik. Наружный IP подставляется через шаблоны deploy/kubernetes/ingress/*.tmpl  скриптом 
+![Screenshot](/docs/images/screenshot3.png)
+
+4. На демо-стенде настроен мониторинг Prometheus с дополнительными экспортерами MySQL.
+
+![Screenshot](/docs/images/screenshot4.png)
+
+5. На демо-стенде настроен сборщик логов Lokki.
+
+![Screenshot](/docs/images/screenshot5.png)
+
+6. На демо-стенде развернута графана c дашбоардами для K8s, MySQL, Lokki.
+
+![Screenshot](/docs/images/screenshot6.png)
+
+7. На демо-стенде развернут ArgoCD. К ArgoCD подключены helm-чарты приложения watchn , соединенные с репозитарием https://gitlab.com/jora450000/demo-watchn.git
+
+![Screenshot](/docs/images/screenshot7.png)
+
+
+=======================================================================================================================================================================
+
 This project has cloned from https://github.com/niallthomson/microservices-demo.git and added here  Gitlab-CI script for build images and publish to docker registry microservices.
 
 gitlab runner is docker:dind. 
