@@ -4,11 +4,11 @@
 
 ![Screenshot](/docs/images/screenshot1.png)
 
-2. Для микросервисного приложения написана сборка CI для GitLab в склонированном с https://github.com/niallthomson/microservices-demo репозитарии в https://gitlab.com/jora450000/demo-watchn.git . В результате исполнения образы микросервисов пушатся в проект docker hub https://hub.docker.com/search?q=jora450000%2Fwatchn (настраивается переменными CI/CD в gitlab). Тег образов latest для ветки main и имя_ветки для любой другой. Helm-часты перенастроены на образы, спушенные в docker.hub сборкой.
+2. Для микросервисного приложения написана сборка CI для GitLab в склонированном с https://github.com/niallthomson/microservices-demo репозитарии в https://gitlab.com/jora450000/demo-watchn.git . В результате исполнения образы микросервисов пушатся в проект docker hub: https://hub.docker.com/search?q=jora450000%2Fwatchn (настраивается переменными CI/CD в gitlab). Тег образов выставляется "latest" для ветки main и имя_ветки  - для любой другой. Helm-часты перенастроены на образы, спушенные в docker.hub сборкой.
 
 ![Screenshot](/docs/images/screenshot2.png)
 
-3. Написан bash-скрипт для разворота приложения в кластере k8s и окружения (k3s, kubectl, helm. Helm-diff, helmfile, certmanager) scripts/k3s-up.sh.   Для опубликованных сервисов настроена выдача и использование сертификатов Let“s Encrypt через certmanager. Ingress настроен через реверс-прокси  traefik. Наружный IP подставляется через шаблоны deploy/kubernetes/ingress/*.tmpl  скриптом 
+3. Написан bash-скрипт для разворота приложения в кластере k8s и окружения (k3s, kubectl, helm. Helm-diff, helmfile, certmanager) /scripts/k3s-up.sh.   Для опубликованных сервисов настроена выдача и использование сертификатов Let“s Encrypt через certmanager. Ingress настроен через реверс-прокси  traefik. Наружный IP подставляется через шаблоны deploy/kubernetes/ingress/*.tmpl  скриптом 
 ![Screenshot](/docs/images/screenshot3.png)
 
 4. На демо-стенде настроен мониторинг Prometheus с дополнительными экспортерами MySQL.
@@ -33,14 +33,11 @@
 
 ![Screenshot](/docs/images/screenshot7.2.png)
 
-=======================================================================================================================================================================
+==============================================================================================================================================================================================================================
 
-This project has cloned from https://github.com/niallthomson/microservices-demo.git and added here  Gitlab-CI script for build images and publish to docker registry microservices and /deploy/kubernetes/k3s-up.sh for create new test k3s-based application watchn, /deploy/kubernetes/ingress/* for make ingress with certmanager certs.
-
+!!! This project has cloned from https://github.com/niallthomson/microservices-demo.git and added here  Gitlab-CI script for build images and publish to docker registry microservices and /deploy/kubernetes/k3s-up.sh for create new  k3s-based test application watchn,  folder /deploy/kubernetes/ingress/ has templates for make ingress with certmanager certs (Let's Encrypt).
 gitlab runner is docker:dind. 
-
 Tag latest must used for branch main.
-
 Other tag become from the name of the branch.
 
 
